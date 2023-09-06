@@ -1,0 +1,62 @@
+[
+  {
+    "eventId": 1,
+    "eventName": "Nikah",
+    "eventDate": "2023-08-15",
+    "eventTime": "19:00",
+    "eventLocation": "Belgaum",
+    "eventDescription": "Sunnat-e-Rasool",
+    "eventCategory": "party",
+    "registrationDeadline": "2023-08-14",
+    "maxAttendees": "100",
+    "ticketPrice": "0"
+  },
+  {
+    "eventId": 2,
+    "eventName": "Walima",
+    "eventDate": "2023-08-18",
+    "eventTime": "13:00",
+    "eventLocation": "Belgaum",
+    "eventDescription": "Sunnat",
+    "eventCategory": "party",
+    "registrationDeadline": "2023-08-15",
+    "maxAttendees": "5000",
+    "ticketPrice": "0"
+  },
+  {
+    "eventId": 3,
+    "eventName": "Aqeeqa",
+    "eventDate": "2024-08-16",
+    "eventTime": "12:00",
+    "eventLocation": "Belgaum",
+    "eventDescription": "Sunnah He",
+    "eventCategory": "workshop",
+    "registrationDeadline": "2024-08-14",
+    "maxAttendees": "200",
+    "ticketPrice": "00"
+  },
+  {
+    "eventId": 4,
+    "eventName": "NIKAH",
+    "eventDate": "2024-08-15",
+    "eventTime": "10:00",
+    "eventLocation": "Belgaum",
+    "eventDescription": "Sunnat",
+    "eventCategory": "party",
+    "registrationDeadline": "2024-08-14",
+    "maxAttendees": "50",
+    "ticketPrice": "0"
+  },
+  {
+    "eventId": 5,
+    "eventName": "Evento",
+    "eventDate": "2023-08-20",
+    "eventTime": "13:00",
+    "eventLocation": "Belgaum",
+    "eventDescription": "123",
+    "eventCategory": "party",
+    "registrationDeadline": "2023-08-19",
+    "maxAttendees": "148",
+    "ticketPrice": "500"
+  }
+]
