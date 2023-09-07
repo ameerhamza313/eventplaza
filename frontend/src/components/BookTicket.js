@@ -21,7 +21,7 @@ const BookTicket = () => {
   }, [eventId]);
 
   const fetchEventDetails = () => {
-    axios.get(`http://localhost:5000/api/events/${eventId}`)
+    axios.get(`https://backend-6ezq.onrender.com/api/events/${eventId}`)
       .then((response) => {
         setEvent(response.data);
       })
@@ -44,7 +44,7 @@ const BookTicket = () => {
 
     try {
       // Send booking data to the server
-      const response = await axios.post('http://localhost:5000/send-email', bookingData);
+      const response = await axios.post('https://backend-6ezq.onrender.com/send-email', bookingData);
       const generatedBookingId = response.data.bookingId;
 
       setBookingId(generatedBookingId);
@@ -63,7 +63,7 @@ const BookTicket = () => {
 
   const generateQRCode = async (generatedBookingId) => {
     try {
-      const response = await axios.get(`http://localhost:5000/qrcode/${generatedBookingId}`);
+      const response = await axios.get(`https://backend-6ezq.onrender.com/qrcode/${generatedBookingId}`);
       setQRCodeData(response.data);
     } catch (error) {
       console.error('Error fetching QR code:', error);

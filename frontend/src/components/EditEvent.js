@@ -20,7 +20,7 @@ const EditEvent = () => {
   });
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/events/${eventId}`)
+    axios.get(`https://backend-6ezq.onrender.com/api/events/${eventId}`)
       .then((response) => {
         setFormData(response.data);
         setLoading(false);
@@ -41,7 +41,7 @@ const EditEvent = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:5000/api/events/${eventId}`, formData)
+    axios.put(`https://backend-6ezq.onrender.com/api/events/${eventId}`, formData)
       .then(() => {
         alert('Event updated successfully!');
         navigate(`/events/${eventId}`);
