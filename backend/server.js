@@ -13,8 +13,8 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 
-const EVENTS_FILE_PATH = 'events.json';
-const BOOKINGS_FILE_PATH = 'bookings.json';
+const EVENTS_FILE_PATH = path.join(__dirname, "events.json");
+const BOOKINGS_FILE_PATH = path.join(__dirname, "bookings.json");
 
 
 // Middleware
