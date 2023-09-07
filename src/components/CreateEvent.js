@@ -27,7 +27,7 @@ const CreateEvent = () => {
       ticketPrice,
     };
 
-    axios.post('http://localhost:5000/api/events', newEvent)
+    axios.post('https://backend-6ezq.onrender.com/api/events', newEvent)
       .then((response) => {
         console.log('Event created:', response.data);
         alert('Event created successfully!');

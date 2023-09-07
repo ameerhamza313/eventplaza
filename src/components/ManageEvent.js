@@ -15,7 +15,7 @@ const ManageEvent = () => {
   }, []);
 
   const fetchEvents = () => {
-    axios.get('http://localhost:5000/api/events')
+    axios.get('https://backend-6ezq.onrender.com/api/events')
       .then((response) => {
         setEvents(response.data);
       })
@@ -25,7 +25,7 @@ const ManageEvent = () => {
   };
 
   const fetchAttendees = () => {
-    axios.get('http://localhost:5000/api/attendees')
+    axios.get('https://backend-6ezq.onrender.com/api/attendees')
       .then((response) => {
         setAttendees(response.data);
       })
@@ -41,7 +41,7 @@ const ManageEvent = () => {
 
   const confirmDeleteEvent = () => {
     if (selectedEventId) {
-      axios.delete(`http://localhost:5000/api/events/${selectedEventId}`)
+      axios.delete(`https://backend-6ezq.onrender.com/api/events/${selectedEventId}`)
         .then(() => {
           setShowDeleteModal(false);
           setSelectedEventId(null);

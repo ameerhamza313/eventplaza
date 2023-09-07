@@ -13,7 +13,7 @@ const Home = () => {
   }, []);
 
   const fetchEvents = () => {
-    axios.get('http://localhost:5000/api/events')
+    axios.get('https://backend-6ezq.onrender.com/api/events')
       .then((response) => {
         // Sort events by eventDate in ascending order
         const sortedEvents = response.data.sort((a, b) => new Date(a.eventDate) - new Date(b.eventDate));
