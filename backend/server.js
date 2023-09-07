@@ -10,7 +10,7 @@ const path = require('path');
 
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 3000;
 
 
 const EVENTS_FILE_PATH = 'events.json';
@@ -265,5 +265,5 @@ app.get('/qrcode/:bookingId', async (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on ${PORT}`);
 });
