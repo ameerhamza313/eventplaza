@@ -5,6 +5,10 @@ const fs = require("fs");
 const nodemailer = require("nodemailer");
 const qrcode = require("qrcode");
 const path = require("path");
+const axios = require("axios"); 
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 // const { createCanvas } = require('canvas');
 
@@ -292,25 +296,18 @@ app.get("/qrcode/:bookingId", async (req, res) => {
   }
 });
 
-// API endpoint for fetching quotes from the Forismatic API
+// API endpoint for fetching quotes using API Ninjas and Axios
 app.get("/api/quotes", async (req, res) => {
-  const requestOptions = {
-    method: "GET",
-    redirect: "follow",
-  };
-
   try {
-    const response = await fetch(
-      "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json",
-      requestOptions
-    );
-
-    // Forismatic returns text, so we need to parse it
-    const resultText = await response.text();
-    const resultJson = JSON.parse(resultText); // Parse the text response to JSON
+    // Make the request using Axios
+    const response = await axios.get("https://api.api-ninjas.com/v1/quotes", {
+      headers: {
+        "X-Api-Key": process.env.API_NINJAS_KEY, 
+      },
+    });
 
     // Return the JSON response to the client
-    return res.json(resultJson);
+    return res.json(response.data);
   } catch (error) {
     console.error("Error fetching quote:", error);
     return res.status(500).json({ error: "Error fetching quote" });
