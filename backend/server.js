@@ -7,6 +7,7 @@ const qrcode = require("qrcode");
 const path = require("path");
 const axios = require("axios"); 
 const dotenv = require("dotenv");
+const { sendMail } = require("./sendMail");
 
 dotenv.config();
 
@@ -37,6 +38,35 @@ const readEventsFromFile = () => {
 const writeEventsToFile = (events) => {
   fs.writeFileSync(EVENTS_FILE_PATH, JSON.stringify(events, null, 2));
 };
+
+// Define a POST route for handling the form submission
+app.post("/api/sendmail", async (req, res) => {
+  const { name, email, subject, message } = req.body;
+
+  // Validate input fields
+  if (!name || !email || !subject || !message) {
+    return res.status(400).json({
+      status: 400,
+      message: "All fields are required",
+    });
+  }
+
+  try {
+    // Call the sendMail utility
+    const response = await sendMail(name, email, subject, message);
+    return res.status(response.status).json({
+      status: response.status,
+      message: response.message,
+    });
+  } catch (error) {
+    console.error("Error sending mail:", error);
+    return res.status(500).json({
+      status: 500,
+      message: "Internal server error",
+    });
+  }
+});
+
 
 // Endpoint to handle event creation
 app.post("/api/events", (req, res) => {
